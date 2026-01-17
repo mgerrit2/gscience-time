@@ -1,0 +1,76 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.gscience.time",
+    "module": "time",
+    "version": "1.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "time-1.2.jar",
+          "url": "time-1.2.jar",
+          "size": 12364,
+          "sha512": "aea2f604093ef2240cb0914c61a282d33351a2f177d7d1763f1e6bdfd95d9f97abae47ccdc47f747dd425640d793722cbe59042b6597ab2200aaa8d15a617299",
+          "sha256": "a2dc69a1c06c1dd25c31c387b03e6f539e1e5467dfcacae986390e2e68cb6bda",
+          "sha1": "a8505d665acc1795ededcf7a77728a6b936c0aa9",
+          "md5": "dd3d714c83c0fd66b6ee35b58fcd06d6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "joda-time",
+          "module": "joda-time",
+          "version": {
+            "requires": "2.12.2"
+          }
+        },
+        {
+          "group": "org.apache.commons",
+          "module": "commons-lang3",
+          "version": {
+            "requires": "3.17.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "time-1.2.jar",
+          "url": "time-1.2.jar",
+          "size": 12364,
+          "sha512": "aea2f604093ef2240cb0914c61a282d33351a2f177d7d1763f1e6bdfd95d9f97abae47ccdc47f747dd425640d793722cbe59042b6597ab2200aaa8d15a617299",
+          "sha256": "a2dc69a1c06c1dd25c31c387b03e6f539e1e5467dfcacae986390e2e68cb6bda",
+          "sha1": "a8505d665acc1795ededcf7a77728a6b936c0aa9",
+          "md5": "dd3d714c83c0fd66b6ee35b58fcd06d6"
+        }
+      ]
+    }
+  ]
+}

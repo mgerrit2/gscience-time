@@ -1,0 +1,151 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'org.gscience.time'
+version '1.2'
+
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+// Define the JUnit 5 version here for easy management
+ext {
+    junit5Version = '5.10.2' // Check Maven Central for the latest stable version
+    // As of current knowledge, 5.10.2 is common, but 5.13.x might be the latest soon/now
+    // Always check: https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter
+}
+
+dependencies {
+
+    // Check for the latest stable version on Maven Central
+    def lombokVersion = '1.18.38' // Use the current stable version
+
+
+    // 1. JUnit BOM (Bill of Materials):
+    // Use this to manage all JUnit 5 module versions consistently.
+    // It imports a platform BOM, so you don't need to specify versions for other JUnit modules.
+    testImplementation(platform("org.junit:junit-bom:${junit5Version}"))
+
+    // 2. JUnit Jupiter API & Engine (aggregator artifact):
+    // This single dependency pulls in both 'junit-jupiter-api' (for writing tests)
+    // and 'junit-jupiter-engine' (for running tests).
+    // The version is managed by the BOM.
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // lombok
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    // Use 'annotationProcessor' to run Lombok's code generation
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+    // date and time library
+    // https://www.joda.org/joda-time/
+    implementation group: 'joda-time', name: 'joda-time', version: '2.12.2'
+
+    // Apache
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+// Configure the 'test' task to use the JUnit Platform.
+// This is essential for Gradle to correctly find and run tests written with JUnit 5.
+// The 'spring-boot-starter-test' transitively includes JUnit Jupiter, so this configuration
+// ensures it runs correctly.
+tasks.named('test') {
+    useJUnitPlatform()
+
+    // Optional: Configure test logging to see detailed output during test execution.
+    // This helps in debugging and understanding test results.
+    testLogging {
+        // Events to display in the console during test execution.
+        // "passed": Shows tests that completed successfully.
+        // "skipped": Shows tests that were intentionally skipped (e.g., with @Disabled).
+        // "failed": Shows tests that failed.
+        // "standardOut": Includes output from System.out.println() in tests.
+        // "standardError": Includes output from System.err.println() in tests.
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+
+        // Show exceptions, causes, and stack traces for failed tests for better debugging.
+        showExceptions true
+        showCauses true
+        showStackTraces true
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'org.gscience.time'
+            artifactId = 'time'
+            version = '1.2'
+
+            from components.java
+
+            // Optional: Add Maven POM properties
+            pom {
+                name = 'Gsience rest tools'
+                description = 'Rest tools'
+                url = 'https://github.com/your-username/your-repository'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'gerrits.marc@hotmail.com'
+                        name = 'Gerrits Marc'
+                        email = 'gerrits.marc@hotmail.com'
+                    }
+                }
+            }
+        }
+    }
+
+    // MANDATORY: Define the target repositories for publishing here.
+    repositories {
+        // This makes the 'publishMavenPublicationToMavenLocal' task available (and runnable).
+        mavenLocal()
+
+        // Example: If you wanted to publish to a temporary local directory:
+        /*
+        maven {
+            name = 'localRepo'
+            url = layout.buildDirectory.dir('repo')
+        }
+        */
+
+        // Example: If you want to publish to a remote server (e.g., Artifactory/Nexus):
+        /*
+        maven {
+            name = 'myRemoteRepository'
+            url = 'https://my.repo.com/artifactory/libs-release-local'
+            credentials {
+                username = project.properties.repoUsername ?: ""
+                password = project.properties.repoPassword ?: ""
+            }
+        }
+        */
+    }
+}
+
+// Ensure the 'publish' task depends on 'jar' and other necessary artifact creation tasks
+// The 'maven-publish' plugin usually handles this, but explicitly ensuring 'assemble' is good practice.
+tasks.named('publish') {
+    dependsOn tasks.named('assemble')
+}
