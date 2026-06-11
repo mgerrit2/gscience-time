@@ -1,7 +1,7 @@
 package gscience.dayOfweek;
 
-import com.gscience.dateTime.LocalDateEx;
-import com.gscience.dateTime.LocalDateTimeEx;
+import com.gscience.datetime.LocalDateEx;
+import com.gscience.datetime.LocalDateTimeEx;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

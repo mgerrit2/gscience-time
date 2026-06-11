@@ -1,7 +1,6 @@
 package oracle;
 
-import com.gscience.dateTime.LocalDateEx;
-import com.gscience.local.LocalEx;
+import com.gscience.datetime.LocalDateEx;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +11,7 @@ import java.time.LocalDate;
  * https://www.oracletutorial.com/oracle-date-functions/oracle-next_day/
  * The Oracle NEXT_DAY() function returns the date of the first weekday specified by day name that is later than a date.
  */
-public class NextDayProblemSpec {
+class NextDayProblemSpec {
 
     @Test
     void Sunday() {

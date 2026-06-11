@@ -1,12 +1,12 @@
 package gscience.datetime;
 
-import com.gscience.dateTime.LocalDateTimeEx;
+import com.gscience.datetime.LocalDateTimeEx;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 
-public class DateTimeExSpec {
+class DateTimeExSpec {
 
     @Test
     void defaultDate() {

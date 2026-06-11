@@ -27,11 +27,11 @@
         {
           "name": "time-1.2.jar",
           "url": "time-1.2.jar",
-          "size": 12362,
-          "sha512": "a1d166c85d7ca5b4523631cd12306197c4161d1018a145791a6d9adc6351b0e09e063a4de08f523de86775eaafcc01cbfb0215c3f8675cf65199c559f2000933",
-          "sha256": "0e21740e7f31fcb8d1430d9450e5609a4e40da7c6612067c8c8b71c4449eea7a",
-          "sha1": "1937b586d744f5f991043725049b8ac420130c86",
-          "md5": "0658730b4ccfdde8ac839f0b3353166b"
+          "size": 12437,
+          "sha512": "dab07f0bcf32b0f201c97d2d6e6bef2ea479a40422312641db43e8389b4e7437226c27958360332bd9ff605f5b9307b111404458cb80c3ce38d5475e2fe78307",
+          "sha256": "f925a1ae343e1c7aaf140d87a4a83d6666a7b8083fa78d0b52c1c3ecf85523c9",
+          "sha1": "7577957e3260129ada94249f09fc096a336dd561",
+          "md5": "060325ae55aaf67d31001670861ca77c"
         }
       ]
     },
@@ -64,11 +64,51 @@
         {
           "name": "time-1.2.jar",
           "url": "time-1.2.jar",
-          "size": 12362,
-          "sha512": "a1d166c85d7ca5b4523631cd12306197c4161d1018a145791a6d9adc6351b0e09e063a4de08f523de86775eaafcc01cbfb0215c3f8675cf65199c559f2000933",
-          "sha256": "0e21740e7f31fcb8d1430d9450e5609a4e40da7c6612067c8c8b71c4449eea7a",
-          "sha1": "1937b586d744f5f991043725049b8ac420130c86",
-          "md5": "0658730b4ccfdde8ac839f0b3353166b"
+          "size": 12437,
+          "sha512": "dab07f0bcf32b0f201c97d2d6e6bef2ea479a40422312641db43e8389b4e7437226c27958360332bd9ff605f5b9307b111404458cb80c3ce38d5475e2fe78307",
+          "sha256": "f925a1ae343e1c7aaf140d87a4a83d6666a7b8083fa78d0b52c1c3ecf85523c9",
+          "sha1": "7577957e3260129ada94249f09fc096a336dd561",
+          "md5": "060325ae55aaf67d31001670861ca77c"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "time-1.2-javadoc.jar",
+          "url": "time-1.2-javadoc.jar",
+          "size": 4205678,
+          "sha512": "4a22221c3bae9d884dea363e016ee61ac81b2e052652c00ce4e12281bffd1117142e5ee8282d06c849c8c5f8f06f8b8eb1e6f7f4e07fc5d9af807392f33809ae",
+          "sha256": "522d6686d55b382ce733b2969a3fc01660049b0942c81ea488707b1d7391a3a3",
+          "sha1": "66537c91fd35730ad5f041f4367a6bd12d3c9168",
+          "md5": "1fea031b2cd0d0e5b3b672fc49415a2f"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "time-1.2-sources.jar",
+          "url": "time-1.2-sources.jar",
+          "size": 6562,
+          "sha512": "f320b7069f515d026bb7c5c13867673118b9065c4d3201ab6f4e7cb941afb0197830c6889a0cba5554ec6f94c09fb311673d0cac5c77603199394280eb044d4b",
+          "sha256": "98b4e5219d5121acc512a674ef3f7fda83d03d4619629b08ffa34a29bcf65a05",
+          "sha1": "8c032efdd420f748589ae239bdaa4051b9494a53",
+          "md5": "44a7348abcc11c6a7f6333ec95e4c6bc"
         }
       ]
     }

@@ -1,4 +1,4 @@
-package com.gscience.dateTime;
+package com.gscience.datetime;
 
 import java.time.*;
 import java.time.temporal.ChronoField;

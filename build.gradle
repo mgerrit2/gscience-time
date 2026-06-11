@@ -11,7 +11,11 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
     }
+    // Enable standard documentation and source packaging
+    withJavadocJar()
+    withSourcesJar()
 }
+
 
 repositories {
     mavenCentral()

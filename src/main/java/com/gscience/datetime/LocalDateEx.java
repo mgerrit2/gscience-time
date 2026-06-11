@@ -1,6 +1,4 @@
-package com.gscience.dateTime;
-
-import org.joda.time.DateTimeFieldType;
+package com.gscience.datetime;
 
 import java.time.*;
 import java.time.temporal.ChronoField;

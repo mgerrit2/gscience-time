@@ -2,6 +2,10 @@ package com.gscience.time;
 
 public class General {
 
+    private General() {
+
+    }
+
     public static boolean isLeapTime(int jaar) {
         if (jaar % 4 == 0) {
             if (jaar % 100 == 0) {

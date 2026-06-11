@@ -2,7 +2,6 @@ package com.gscience.vm;
 
 import com.gscience.timezone.TimeZoneEx;
 import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j2;
 
 
 import java.util.Locale;
